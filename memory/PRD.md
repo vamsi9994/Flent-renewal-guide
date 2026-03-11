@@ -31,6 +31,8 @@ Build a renewal guide webpage to send to clients showing:
 - ✅ Total savings display (green glow effect)
 - ✅ Responsive mobile layout
 - ✅ Dark theme with zinc/green accent colors
+- ✅ Program introduction section (casual, rewarding tone)
+- ✅ FAQ accordion section (4 questions)
 
 ## Calculation Logic
 - Escalation Amount = Current Rent × Escalation %
@@ -43,6 +45,8 @@ Build a renewal guide webpage to send to clients showing:
 - [x] Core calculator functionality
 - [x] Lock-in slider
 - [x] Savings display
+- [x] Intro section with program description
+- [x] FAQ section
 
 ### P1 (High)
 - [ ] HubSpot integration (pull rent from "Contracts" > "Total retail rent")
