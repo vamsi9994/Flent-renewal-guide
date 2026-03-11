@@ -398,32 +398,6 @@ function App() {
                       </div>
                     </div>
                   </div>
-
-                  {/* Offer Cards */}
-                  {currentOption.months > 0 && (
-                    <div className="mt-8 pt-6 border-t border-zinc-800">
-                      <p className="text-zinc-500 text-xs uppercase tracking-wider mb-4">All Available Offers</p>
-                      <div className="grid grid-cols-3 gap-3">
-                        {LOCKIN_OPTIONS.filter(opt => opt.discount > 0).map((option) => (
-                          <div
-                            key={option.months}
-                            className={`p-3 rounded-lg text-center transition-all ${
-                              currentOption.months === option.months
-                                ? 'bg-green-500/10 border border-green-500/30'
-                                : 'bg-zinc-800/50 border border-transparent'
-                            }`}
-                          >
-                            <p className={`font-mono text-lg font-bold ${
-                              currentOption.months === option.months ? 'text-green-400' : 'text-zinc-400'
-                            }`}>
-                              {option.discount}%
-                            </p>
-                            <p className="text-zinc-500 text-xs mt-1">{option.label}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </CardContent>
               </Card>
             </div>
