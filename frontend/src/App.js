@@ -126,9 +126,20 @@ function App() {
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4" style={{ fontFamily: 'Manrope, sans-serif' }}>
               Renewal Guide
             </h1>
-            <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto">
+            <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-6">
               Choose your lock-in period and see how much you can save on your renewal
             </p>
+            
+            {/* Program Introduction */}
+            <div className="max-w-3xl mx-auto bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 md:p-8 text-left">
+              <p className="text-zinc-300 text-base leading-relaxed mb-3">
+                We've designed this program as a small thank you for choosing to stay with us longer. 
+                The longer you commit, the more you save — it's our way of rewarding your trust and making your stay even more rewarding.
+              </p>
+              <p className="text-zinc-500 text-sm">
+                Simply pick a lock-in period that works for you, and watch the savings add up.
+              </p>
+            </div>
           </div>
 
           {/* Main Grid */}
