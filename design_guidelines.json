@@ -1,0 +1,108 @@
+{
+  "design_system": {
+    "typography": {
+      "font_family": {
+        "heading": "Manrope, sans-serif",
+        "body": "Inter, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "h1": "text-4xl md:text-6xl font-bold tracking-tight",
+        "h2": "text-3xl md:text-4xl font-semibold tracking-tight",
+        "h3": "text-2xl font-medium",
+        "body": "text-base leading-relaxed text-zinc-400",
+        "label": "text-sm font-medium uppercase tracking-wider text-zinc-500",
+        "number_display": "font-mono tracking-tight"
+      }
+    },
+    "colors": {
+      "theme": "dark",
+      "palette": {
+        "background": "#09090b",
+        "surface": "#18181b",
+        "surface_highlight": "#27272a",
+        "border": "#27272a",
+        "text": {
+          "primary": "#fafafa",
+          "secondary": "#a1a1aa",
+          "muted": "#52525b"
+        },
+        "accent": {
+          "primary": "#22c55e",
+          "glow": "rgba(34, 197, 94, 0.5)",
+          "text": "#4ade80"
+        },
+        "status": {
+          "error": "#ef4444",
+          "neutral": "#71717a"
+        }
+      }
+    },
+    "layout": {
+      "container": "max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20",
+      "grid_strategy": "grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start",
+      "spacing": {
+        "section_gap": "gap-12",
+        "internal_padding": "p-6 md:p-10"
+      }
+    },
+    "visual_enhancers": {
+      "radius": "rounded-2xl",
+      "shadows": {
+        "card": "shadow-[0_0_0_1px_rgba(39,39,42,1),0_8px_16px_-4px_rgba(0,0,0,0.5)]",
+        "glow": "shadow-[0_0_40px_-10px_rgba(34,197,94,0.3)]"
+      },
+      "glass": "backdrop-blur-xl bg-zinc-950/80 border border-white/10",
+      "animation": {
+        "transition": "transition-all duration-300 ease-out",
+        "hover_lift": "hover:-translate-y-1 hover:shadow-lg"
+      }
+    }
+  },
+  "components": {
+    "slider": {
+      "style": "custom-range-slider",
+      "track": "bg-zinc-800 h-2 rounded-full",
+      "thumb": "bg-white border-4 border-zinc-950 h-6 w-6 shadow-[0_0_20px_rgba(255,255,255,0.5)]",
+      "active": "bg-green-500"
+    },
+    "input": {
+      "base": "bg-zinc-900/50 border-zinc-800 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-white font-mono text-lg h-14",
+      "label_style": "text-zinc-500 text-xs uppercase tracking-widest mb-2 block"
+    },
+    "card": {
+      "base": "bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden relative"
+    }
+  },
+  "assets": {
+    "images": [
+      {
+        "category": "background_texture",
+        "url": "https://images.unsplash.com/photo-1770816306485-862b40ecc402?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwbW9kZXJuJTIwYXJjaGl0ZWN0dXJlJTIwaW50ZXJpb3IlMjBkYXJrfGVufDB8fHx8MTc3MzIxMTMzNHww&ixlib=rb-4.1.0&q=85",
+        "usage": "Page background with heavy overlay (opacity-10) to add subtle depth without distraction"
+      }
+    ],
+    "icons": {
+      "library": "lucide-react",
+      "suggestions": ["Calculator", "TrendingUp", "Lock", "Unlock", "CheckCircle2", "DollarSign"]
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. SETUP: Install 'lucide-react' and 'clsx' 'tailwind-merge' if not present.",
+    "2. FONTS: Import 'Manrope' and 'JetBrains Mono' from Google Fonts in index.css.",
+    "3. THEME: Force DARK MODE. The app should feel like a premium fintech tool.",
+    "4. LAYOUT: Use a Split Layout. Left side = Inputs (The Control Panel). Right side = Results (The Receipt).",
+    "5. LOGIC: Implement the discount logic strictly: 0m=0%, 6m=30%, 9m=40%, 11m=50% off the ESCALATION amount (not the rent).",
+    "6. GAMIFICATION: The 'Total Savings' number on the right should be the HERO element. Make it Green (#22c55e) and large (text-5xl).",
+    "7. SLIDER: Create a custom slider component that snaps to the 4 specific points (0, 6, 9, 11). Do not allow intermediate values.",
+    "8. MOBILE: Stack the panels. Inputs on top, Results sticky at bottom or below inputs.",
+    "9. TESTING: Add data-testid to: 'rent-input', 'escalation-input', 'lockin-slider', 'monthly-rent-display', 'total-savings-display'."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Avoid generic AI designs. Use 'zinc-950' instead of pure black.",
+    "Use 'JetBrains Mono' for all currency and percentage values to ensure tabular alignment.",
+    "Add micro-interactions: When the slider moves, the numbers should transition smoothly (use a counting animation if possible).",
+    "Do not use gradients for backgrounds. Use solid colors or subtle noise textures.",
+    "Ensure contrast ratios are met. Green text on black is good, but ensure grey text is legible."
+  ]
+}
