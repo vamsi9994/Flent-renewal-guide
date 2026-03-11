@@ -184,7 +184,8 @@ function App() {
                       {LOCKIN_OPTIONS.map((option, index) => (
                         <span
                           key={option.months}
-                          className={`slider-marker text-xs ${sliderValue[0] === index ? 'active' : ''}`}
+                          className={`slider-marker text-xs cursor-pointer ${sliderValue[0] === index ? 'active' : ''}`}
+                          onClick={() => setSliderValue([index])}
                         >
                           {option.label}
                         </span>
