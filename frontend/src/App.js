@@ -362,6 +362,38 @@ function App() {
           <div className="text-center mt-12 text-zinc-600 text-sm">
             <p>Savings calculated over the standard 11-month term period</p>
           </div>
+
+          {/* FAQ Section */}
+          <div className="mt-16 md:mt-20 max-w-3xl mx-auto">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-2 bg-zinc-800 rounded-lg">
+                <HelpCircle className="w-5 h-5 text-zinc-400" />
+              </div>
+              <h2 className="text-2xl font-semibold text-white" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                Frequently Asked Questions
+              </h2>
+            </div>
+            
+            <Accordion type="single" collapsible className="space-y-3">
+              {FAQ_DATA.map((faq, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`}
+                  className="bg-zinc-900 border border-zinc-800 rounded-xl px-6 data-[state=open]:border-zinc-700"
+                >
+                  <AccordionTrigger className="text-left text-white hover:no-underline py-5 text-base font-medium">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-zinc-400 pb-5 leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+
+          {/* Bottom spacing */}
+          <div className="h-12"></div>
         </div>
       </div>
     </div>
