@@ -1,9 +1,30 @@
 import { useState, useEffect, useCallback } from "react";
 import "@/App.css";
-import { Lock, Unlock, TrendingUp, Calculator, CheckCircle2 } from "lucide-react";
+import { Lock, Unlock, TrendingUp, Calculator, CheckCircle2, ChevronDown, HelpCircle } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
+// FAQ Data
+const FAQ_DATA = [
+  {
+    question: "How is rent calculated if my renewal starts mid-month?",
+    answer: "If your renewal begins mid-month, the rent for the remaining days will be prorated based on the renewal date and added to the following month's rent invoice."
+  },
+  {
+    question: "Are these discounts and benefits lifetime offers?",
+    answer: "No. The discounts and benefits offered are exclusive to this renewal term. Once the term ends, the rent will revert to the base rent along with the standard escalation applicable at that time."
+  },
+  {
+    question: "Will my rent increase after the lock-in period ends?",
+    answer: "No. The pricing is fixed for the full agreement term (11 months). The lock-in period only defines your minimum stay commitment — the rent remains the same throughout the entire term."
+  },
+  {
+    question: "Can I increase my lock-in period later and still get the same discounts?",
+    answer: "Lock-in choices made during renewal are fixed for the duration of that term. You may be able to extend the lock-in after the initial lock-in period ends, depending on program availability. Any discounts offered at that time will be subject to Flent's discretion."
+  }
+];
 
 // Lock-in options configuration
 const LOCKIN_OPTIONS = [
