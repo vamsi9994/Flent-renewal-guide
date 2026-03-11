@@ -85,6 +85,37 @@ body {
     box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
 }
 
+/* Light theme slider */
+.light-slider [data-radix-slider-track] {
+    background: #e4e4e7;
+    height: 8px;
+    border-radius: 9999px;
+}
+
+.light-slider [data-radix-slider-range] {
+    background: linear-gradient(90deg, #16a34a, #22c55e);
+    border-radius: 9999px;
+}
+
+.light-slider [data-radix-slider-thumb] {
+    width: 24px;
+    height: 24px;
+    background: white;
+    border: 4px solid #16a34a;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.2s ease;
+}
+
+.light-slider [data-radix-slider-thumb]:hover {
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+}
+
+.light-slider [data-radix-slider-thumb]:focus {
+    outline: none;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.5);
+}
+
 /* Number transition animation */
 .number-transition {
     transition: all 0.3s ease-out;
