@@ -164,10 +164,21 @@ function App() {
       setSubmitMessage(response.data.message);
     } catch (error) {
       setSubmitStatus('error');
-      setSubmitMessage(
-        error.response?.data?.detail || 
-        'Something went wrong. Please try again or contact support.'
-      );
+      let errorMessage = 'Something went wrong. Please try again or contact support.';
+      
+      if (error.response?.data?.detail) {
+        if (Array.isArray(error.response.data.detail)) {
+          // Handle validation errors (422)
+          errorMessage = error.response.data.detail
+            .map(err => err.msg || 'Validation error')
+            .join(', ');
+        } else if (typeof error.response.data.detail === 'string') {
+          // Handle string error messages (500, etc.)
+          errorMessage = error.response.data.detail;
+        }
+      }
+      
+      setSubmitMessage(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
