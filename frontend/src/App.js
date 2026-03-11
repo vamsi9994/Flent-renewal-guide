@@ -218,13 +218,13 @@ function App() {
             
             {/* Left Panel - Control Panel */}
             <div className="lg:col-span-5">
-              <Card className="bg-zinc-900 border-zinc-800 rounded-2xl overflow-hidden">
+              <Card className="bg-white border-zinc-200 rounded-2xl overflow-hidden shadow-sm">
                 <CardContent className="p-6 md:p-8">
                   <div className="flex items-center gap-3 mb-8">
-                    <div className="p-2 bg-zinc-800 rounded-lg">
-                      <Calculator className="w-5 h-5 text-zinc-400" />
+                    <div className="p-2 bg-zinc-100 rounded-lg">
+                      <Calculator className="w-5 h-5 text-zinc-600" />
                     </div>
-                    <h2 className="text-xl font-semibold text-white" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    <h2 className="text-xl font-semibold text-zinc-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
                       Your Details
                     </h2>
                   </div>
@@ -241,7 +241,7 @@ function App() {
                         type="text"
                         value={currentRent.toLocaleString('en-IN')}
                         onChange={handleRentChange}
-                        className="bg-zinc-900/50 border-zinc-800 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-white font-mono text-lg h-14 pl-10"
+                        className="bg-zinc-50 border-zinc-200 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-zinc-900 font-mono text-lg h-14 pl-10"
                         placeholder="50,000"
                       />
                     </div>
@@ -258,13 +258,13 @@ function App() {
                         type="text"
                         value={escalation}
                         onChange={handleEscalationChange}
-                        className="bg-zinc-900/50 border-zinc-800 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-white font-mono text-lg h-14 pr-10"
+                        className="bg-zinc-50 border-zinc-200 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-zinc-900 font-mono text-lg h-14 pr-10"
                         placeholder="10"
                       />
                       <span className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 font-mono">%</span>
                     </div>
-                    <p className="text-zinc-600 text-sm mt-2">
-                      Monthly escalation: <span className="font-mono text-zinc-400">{formatCurrency(escalationAmount)}</span>
+                    <p className="text-zinc-500 text-sm mt-2">
+                      Monthly escalation: <span className="font-mono text-zinc-700">{formatCurrency(escalationAmount)}</span>
                     </p>
                   </div>
 
@@ -273,7 +273,7 @@ function App() {
                     <label className="text-zinc-500 text-xs uppercase tracking-widest mb-4 block">
                       Choose Lock-in Period
                     </label>
-                    <div className="custom-slider px-1" data-testid="lockin-slider">
+                    <div className="custom-slider light-slider px-1" data-testid="lockin-slider">
                       <Slider
                         value={sliderValue}
                         onValueChange={setSliderValue}
