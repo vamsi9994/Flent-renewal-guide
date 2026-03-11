@@ -301,20 +301,20 @@ function App() {
 
             {/* Right Panel - Results */}
             <div className="lg:col-span-7">
-              <Card className="bg-zinc-900 border-zinc-800 rounded-2xl overflow-hidden card-hover">
+              <Card className="bg-white border-zinc-200 rounded-2xl overflow-hidden shadow-sm">
                 <CardContent className="p-6 md:p-8">
                   {/* Selected Plan Header */}
                   <div className="flex items-center justify-between mb-8">
                     <div className="flex items-center gap-3">
-                      <div className={`p-2 rounded-lg ${currentOption.months > 0 ? 'bg-green-500/10' : 'bg-zinc-800'}`}>
+                      <div className={`p-2 rounded-lg ${currentOption.months > 0 ? 'bg-green-500/10' : 'bg-zinc-100'}`}>
                         {currentOption.months > 0 ? (
-                          <Lock className="w-5 h-5 text-green-500" />
+                          <Lock className="w-5 h-5 text-green-600" />
                         ) : (
-                          <Unlock className="w-5 h-5 text-zinc-400" />
+                          <Unlock className="w-5 h-5 text-zinc-500" />
                         )}
                       </div>
                       <div>
-                        <h2 className="text-xl font-semibold text-white" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                        <h2 className="text-xl font-semibold text-zinc-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
                           {currentOption.label}
                         </h2>
                         <p className="text-zinc-500 text-sm">
@@ -326,7 +326,7 @@ function App() {
                       </div>
                     </div>
                     {currentOption.discount > 0 && (
-                      <div className="bg-green-500/10 text-green-400 px-3 py-1.5 rounded-full text-sm font-medium">
+                      <div className="bg-green-500/10 text-green-600 px-3 py-1.5 rounded-full text-sm font-medium">
                         Save {currentOption.discount}%
                       </div>
                     )}
@@ -334,22 +334,22 @@ function App() {
 
                   {/* Pricing Breakdown */}
                   <div className="space-y-4 mb-8">
-                    <div className="flex justify-between items-center py-3 border-b border-zinc-800">
-                      <span className="text-zinc-400">Current Rent</span>
-                      <span className="font-mono text-white" data-testid="current-rent-display">
+                    <div className="flex justify-between items-center py-3 border-b border-zinc-200">
+                      <span className="text-zinc-600">Current Rent</span>
+                      <span className="font-mono text-zinc-900" data-testid="current-rent-display">
                         {formatCurrency(currentRent)}
                       </span>
                     </div>
-                    <div className="flex justify-between items-center py-3 border-b border-zinc-800">
-                      <span className="text-zinc-400">Escalation ({escalation}%)</span>
-                      <span className="font-mono text-white">
+                    <div className="flex justify-between items-center py-3 border-b border-zinc-200">
+                      <span className="text-zinc-600">Escalation ({escalation}%)</span>
+                      <span className="font-mono text-zinc-900">
                         +{formatCurrency(escalationAmount)}
                       </span>
                     </div>
                     {currentOption.discount > 0 && (
-                      <div className="flex justify-between items-center py-3 border-b border-zinc-800">
-                        <span className="text-zinc-400">Discount on Escalation</span>
-                        <span className="font-mono text-green-400">
+                      <div className="flex justify-between items-center py-3 border-b border-zinc-200">
+                        <span className="text-zinc-600">Discount on Escalation</span>
+                        <span className="font-mono text-green-600">
                           -{formatCurrency(discountAmount)}
                         </span>
                       </div>
@@ -357,19 +357,19 @@ function App() {
                   </div>
 
                   {/* New Monthly Rent */}
-                  <div className="bg-zinc-800/50 rounded-xl p-6 mb-6">
+                  <div className="bg-zinc-100 rounded-xl p-6 mb-6">
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="text-zinc-500 text-sm uppercase tracking-wider mb-1">New Monthly Rent</p>
                         <div className="flex items-center gap-2">
-                          <TrendingUp className="w-4 h-4 text-zinc-400" />
+                          <TrendingUp className="w-4 h-4 text-zinc-500" />
                           <span className="text-zinc-500 text-sm">Starting next term</span>
                         </div>
                       </div>
                       <div className="text-right">
                         <AnimatedNumber
                           value={newMonthlyRent}
-                          className="font-mono text-3xl md:text-4xl font-bold text-white number-transition"
+                          className="font-mono text-3xl md:text-4xl font-bold text-zinc-900 number-transition"
                           data-testid="monthly-rent-display"
                         />
                       </div>
@@ -377,12 +377,12 @@ function App() {
                   </div>
 
                   {/* Total Savings - Hero Element */}
-                  <div className={`rounded-xl p-6 ${totalSavings > 0 ? 'bg-green-500/5 border border-green-500/20' : 'bg-zinc-800/30'}`}>
+                  <div className={`rounded-xl p-6 ${totalSavings > 0 ? 'bg-green-50 border border-green-200' : 'bg-zinc-100'}`}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <CheckCircle2 className={`w-6 h-6 ${totalSavings > 0 ? 'text-green-500' : 'text-zinc-600'}`} />
+                        <CheckCircle2 className={`w-6 h-6 ${totalSavings > 0 ? 'text-green-600' : 'text-zinc-400'}`} />
                         <div>
-                          <p className={`text-sm uppercase tracking-wider mb-1 ${totalSavings > 0 ? 'text-green-400' : 'text-zinc-500'}`}>
+                          <p className={`text-sm uppercase tracking-wider mb-1 ${totalSavings > 0 ? 'text-green-700' : 'text-zinc-500'}`}>
                             Total Savings (11 months)
                           </p>
                           <p className="text-zinc-500 text-xs">
@@ -393,7 +393,7 @@ function App() {
                       <div data-testid="total-savings-display">
                         <AnimatedNumber
                           value={totalSavings}
-                          className={`font-mono text-4xl md:text-5xl font-bold number-transition ${totalSavings > 0 ? 'text-green-400 savings-glow' : 'text-zinc-600'}`}
+                          className={`font-mono text-4xl md:text-5xl font-bold number-transition ${totalSavings > 0 ? 'text-green-600' : 'text-zinc-400'}`}
                         />
                       </div>
                     </div>
