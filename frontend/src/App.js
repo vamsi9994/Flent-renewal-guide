@@ -499,11 +499,11 @@ function App() {
                   </>
                 ) : (
                   <div className="text-center py-8">
-                    <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle2 className="w-8 h-8 text-green-500" />
+                    <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle2 className="w-8 h-8 text-green-600" />
                     </div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Submission Successful!</h3>
-                    <p className="text-zinc-400 text-sm max-w-md mx-auto">
+                    <h3 className="text-xl font-semibold text-zinc-900 mb-2">Submission Successful!</h3>
+                    <p className="text-zinc-600 text-sm max-w-md mx-auto">
                       {submitMessage}
                     </p>
                   </div>
@@ -513,17 +513,17 @@ function App() {
           </div>
 
           {/* Footer Note */}
-          <div className="text-center mt-12 text-zinc-600 text-sm">
+          <div className="text-center mt-12 text-zinc-500 text-sm">
             <p>Savings calculated over the standard 11-month term period</p>
           </div>
 
           {/* FAQ Section */}
           <div className="mt-16 md:mt-20 max-w-3xl mx-auto">
             <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-zinc-800 rounded-lg">
-                <HelpCircle className="w-5 h-5 text-zinc-400" />
+              <div className="p-2 bg-zinc-200 rounded-lg">
+                <HelpCircle className="w-5 h-5 text-zinc-600" />
               </div>
-              <h2 className="text-2xl font-semibold text-white" style={{ fontFamily: 'Manrope, sans-serif' }}>
+              <h2 className="text-2xl font-semibold text-zinc-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
                 Frequently Asked Questions
               </h2>
             </div>
@@ -533,12 +533,12 @@ function App() {
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`}
-                  className="bg-zinc-900 border border-zinc-800 rounded-xl px-6 data-[state=open]:border-zinc-700"
+                  className="bg-white border border-zinc-200 rounded-xl px-6 data-[state=open]:border-zinc-300 shadow-sm"
                 >
-                  <AccordionTrigger className="text-left text-white hover:no-underline py-5 text-base font-medium">
+                  <AccordionTrigger className="text-left text-zinc-900 hover:no-underline py-5 text-base font-medium">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-zinc-400 pb-5 leading-relaxed">
+                  <AccordionContent className="text-zinc-600 pb-5 leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
