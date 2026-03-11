@@ -1,10 +1,15 @@
 import { useState, useEffect, useCallback } from "react";
 import "@/App.css";
-import { Lock, Unlock, TrendingUp, Calculator, CheckCircle2, ChevronDown, HelpCircle } from "lucide-react";
+import { Lock, Unlock, TrendingUp, Calculator, CheckCircle2, HelpCircle, Send, Loader2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Slider } from "@/components/ui/slider";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import axios from "axios";
+
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const API = `${BACKEND_URL}/api`;
 
 // FAQ Data
 const FAQ_DATA = [
@@ -44,6 +49,17 @@ const formatCurrency = (amount) => {
   }).format(amount);
 };
 
+// Get URL parameters
+const getUrlParams = () => {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    email: params.get('email') || '',
+    name: params.get('name') || '',
+    rent: params.get('rent') ? parseInt(params.get('rent')) : null,
+    escalation: params.get('escalation') ? parseFloat(params.get('escalation')) : null,
+  };
+};
+
 // Animated number component
 const AnimatedNumber = ({ value, className, prefix = "", suffix = "" }) => {
   const [displayValue, setDisplayValue] = useState(value);
@@ -76,9 +92,16 @@ const AnimatedNumber = ({ value, className, prefix = "", suffix = "" }) => {
 };
 
 function App() {
-  const [currentRent, setCurrentRent] = useState(50000);
-  const [escalation, setEscalation] = useState(10);
+  const urlParams = getUrlParams();
+  
+  const [currentRent, setCurrentRent] = useState(urlParams.rent || 50000);
+  const [escalation, setEscalation] = useState(urlParams.escalation || 10);
   const [sliderValue, setSliderValue] = useState([0]);
+  const [tenantEmail, setTenantEmail] = useState(urlParams.email);
+  const [tenantName, setTenantName] = useState(urlParams.name);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
+  const [submitMessage, setSubmitMessage] = useState('');
 
   // Get current lock-in option based on slider
   const currentOption = LOCKIN_OPTIONS[sliderValue[0]];
@@ -93,7 +116,6 @@ function App() {
   const newMonthlyRent = currentRent + escalationAmount - discountAmount;
 
   // Calculate total savings over 11 months
-  // Savings = discount per month * 11 months
   const totalSavings = discountAmount * 11;
 
   // Handle rent input change
@@ -112,6 +134,44 @@ function App() {
       setEscalation(0);
     }
   }, []);
+
+  // Handle form submission
+  const handleSubmit = async () => {
+    if (!tenantEmail) {
+      setSubmitStatus('error');
+      setSubmitMessage('Please enter your email address to submit.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+    setSubmitMessage('');
+
+    try {
+      const response = await axios.post(`${API}/renewal/submit`, {
+        tenant_email: tenantEmail,
+        tenant_name: tenantName || null,
+        current_rent: currentRent,
+        escalation_percent: escalation,
+        lockin_months: currentOption.months,
+        lockin_label: currentOption.label,
+        discount_percent: currentOption.discount,
+        new_monthly_rent: newMonthlyRent,
+        total_savings: totalSavings,
+      });
+
+      setSubmitStatus('success');
+      setSubmitMessage(response.data.message);
+    } catch (error) {
+      setSubmitStatus('error');
+      setSubmitMessage(
+        error.response?.data?.detail || 
+        'Something went wrong. Please try again or contact support.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="App min-h-screen bg-zinc-950">
@@ -356,6 +416,115 @@ function App() {
                 </CardContent>
               </Card>
             </div>
+          </div>
+
+          {/* Submit Section */}
+          <div className="mt-12 max-w-3xl mx-auto">
+            <Card className="bg-zinc-900 border-zinc-800 rounded-2xl overflow-hidden">
+              <CardContent className="p-6 md:p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-2 bg-green-500/10 rounded-lg">
+                    <Send className="w-5 h-5 text-green-500" />
+                  </div>
+                  <h2 className="text-xl font-semibold text-white" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    Confirm Your Choice
+                  </h2>
+                </div>
+
+                {submitStatus !== 'success' ? (
+                  <>
+                    <p className="text-zinc-400 text-sm mb-6">
+                      Ready to lock in your savings? Enter your email below and we'll send you a confirmation along with notifying our team.
+                    </p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                      <div>
+                        <label className="text-zinc-500 text-xs uppercase tracking-widest mb-2 block">
+                          Your Email *
+                        </label>
+                        <Input
+                          data-testid="tenant-email-input"
+                          type="email"
+                          value={tenantEmail}
+                          onChange={(e) => setTenantEmail(e.target.value)}
+                          className="bg-zinc-900/50 border-zinc-800 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-white h-12"
+                          placeholder="your@email.com"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-zinc-500 text-xs uppercase tracking-widest mb-2 block">
+                          Your Name (Optional)
+                        </label>
+                        <Input
+                          data-testid="tenant-name-input"
+                          type="text"
+                          value={tenantName}
+                          onChange={(e) => setTenantName(e.target.value)}
+                          className="bg-zinc-900/50 border-zinc-800 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-white h-12"
+                          placeholder="John Doe"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Summary before submit */}
+                    <div className="bg-zinc-800/30 rounded-xl p-4 mb-6">
+                      <p className="text-zinc-500 text-xs uppercase tracking-wider mb-3">Your Selection Summary</p>
+                      <div className="flex flex-wrap gap-4 text-sm">
+                        <div>
+                          <span className="text-zinc-500">Lock-in: </span>
+                          <span className="text-white font-medium">{currentOption.label}</span>
+                        </div>
+                        <div>
+                          <span className="text-zinc-500">New Rent: </span>
+                          <span className="text-white font-mono">{formatCurrency(newMonthlyRent)}</span>
+                        </div>
+                        {totalSavings > 0 && (
+                          <div>
+                            <span className="text-zinc-500">Savings: </span>
+                            <span className="text-green-400 font-mono">{formatCurrency(totalSavings)}</span>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {submitStatus === 'error' && (
+                      <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4 mb-6">
+                        <p className="text-red-400 text-sm">{submitMessage}</p>
+                      </div>
+                    )}
+
+                    <Button
+                      data-testid="submit-btn"
+                      onClick={handleSubmit}
+                      disabled={isSubmitting || !tenantEmail}
+                      className="w-full h-14 bg-green-600 hover:bg-green-500 text-white font-semibold text-lg rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                          Submitting...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-5 h-5 mr-2" />
+                          Submit My Choice
+                        </>
+                      )}
+                    </Button>
+                  </>
+                ) : (
+                  <div className="text-center py-8">
+                    <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <CheckCircle2 className="w-8 h-8 text-green-500" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-2">Submission Successful!</h3>
+                    <p className="text-zinc-400 text-sm max-w-md mx-auto">
+                      {submitMessage}
+                    </p>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
           </div>
 
           {/* Footer Note */}
