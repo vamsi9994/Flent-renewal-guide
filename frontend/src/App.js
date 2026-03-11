@@ -405,20 +405,20 @@ function App() {
 
           {/* Submit Section */}
           <div className="mt-12 max-w-3xl mx-auto">
-            <Card className="bg-zinc-900 border-zinc-800 rounded-2xl overflow-hidden">
+            <Card className="bg-white border-zinc-200 rounded-2xl overflow-hidden shadow-sm">
               <CardContent className="p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="p-2 bg-green-500/10 rounded-lg">
-                    <Send className="w-5 h-5 text-green-500" />
+                    <Send className="w-5 h-5 text-green-600" />
                   </div>
-                  <h2 className="text-xl font-semibold text-white" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                  <h2 className="text-xl font-semibold text-zinc-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
                     Confirm Your Choice
                   </h2>
                 </div>
 
                 {submitStatus !== 'success' ? (
                   <>
-                    <p className="text-zinc-400 text-sm mb-6">
+                    <p className="text-zinc-600 text-sm mb-6">
                       Ready to lock in your savings? Enter your email below and we'll send you a confirmation along with notifying our team.
                     </p>
 
@@ -432,7 +432,7 @@ function App() {
                           type="email"
                           value={tenantEmail}
                           onChange={(e) => setTenantEmail(e.target.value)}
-                          className="bg-zinc-900/50 border-zinc-800 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-white h-12"
+                          className="bg-zinc-50 border-zinc-200 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-zinc-900 h-12"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -445,36 +445,36 @@ function App() {
                           type="text"
                           value={tenantName}
                           onChange={(e) => setTenantName(e.target.value)}
-                          className="bg-zinc-900/50 border-zinc-800 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-white h-12"
+                          className="bg-zinc-50 border-zinc-200 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-zinc-900 h-12"
                           placeholder="John Doe"
                         />
                       </div>
                     </div>
 
                     {/* Summary before submit */}
-                    <div className="bg-zinc-800/30 rounded-xl p-4 mb-6">
+                    <div className="bg-zinc-100 rounded-xl p-4 mb-6">
                       <p className="text-zinc-500 text-xs uppercase tracking-wider mb-3">Your Selection Summary</p>
                       <div className="flex flex-wrap gap-4 text-sm">
                         <div>
                           <span className="text-zinc-500">Lock-in: </span>
-                          <span className="text-white font-medium">{currentOption.label}</span>
+                          <span className="text-zinc-900 font-medium">{currentOption.label}</span>
                         </div>
                         <div>
                           <span className="text-zinc-500">New Rent: </span>
-                          <span className="text-white font-mono">{formatCurrency(newMonthlyRent)}</span>
+                          <span className="text-zinc-900 font-mono">{formatCurrency(newMonthlyRent)}</span>
                         </div>
                         {totalSavings > 0 && (
                           <div>
                             <span className="text-zinc-500">Savings: </span>
-                            <span className="text-green-400 font-mono">{formatCurrency(totalSavings)}</span>
+                            <span className="text-green-600 font-mono">{formatCurrency(totalSavings)}</span>
                           </div>
                         )}
                       </div>
                     </div>
 
                     {submitStatus === 'error' && (
-                      <div className="bg-red-500/10 border border-red-500/20 rounded-lg p-4 mb-6">
-                        <p className="text-red-400 text-sm">{submitMessage}</p>
+                      <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                        <p className="text-red-600 text-sm">{submitMessage}</p>
                       </div>
                     )}
 
