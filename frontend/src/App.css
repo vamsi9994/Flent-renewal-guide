@@ -1,19 +1,12 @@
 /* App-specific styles */
 .App {
     min-height: 100vh;
-    background-color: #09090b;
+    background-color: #f4f4f5;
 }
 
-/* Background overlay for subtle texture */
+/* Background overlay - disabled for light theme */
 .bg-overlay {
-    position: fixed;
-    inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1770816306485-862b40ecc402?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwbW9kZXJuJTIwYXJjaGl0ZWN0dXJlJTIwaW50ZXJpb3IlMjBkYXJrfGVufDB8fHx8MTc3MzIxMTMzNHww&ixlib=rb-4.1.0&q=85');
-    background-size: cover;
-    background-position: center;
-    opacity: 0.03;
-    pointer-events: none;
-    z-index: 0;
+    display: none;
 }
 
 /* Ensure content is above the overlay */
