@@ -197,15 +197,16 @@ async def submit_renewal(submission: RenewalSubmission):
         await asyncio.to_thread(resend.Emails.send, landlord_params)
         logger.info(f"Email sent to landlord: {LANDLORD_EMAIL}")
         
-        # Send confirmation to tenant
-        tenant_params = {
-            "from": SENDER_EMAIL,
-            "to": [submission.tenant_email],
-            "subject": "Your Renewal Choice - Confirmation",
-            "html": tenant_html
-        }
-        await asyncio.to_thread(resend.Emails.send, tenant_params)
-        logger.info(f"Confirmation email sent to tenant: {submission.tenant_email}")
+        # Skip tenant confirmation email (requires domain verification)
+        # Once domain is verified, uncomment below:
+        # tenant_params = {
+        #     "from": "renewals@flent.in",
+        #     "to": [submission.tenant_email],
+        #     "subject": "Your Renewal Choice - Confirmation",
+        #     "html": tenant_html
+        # }
+        # await asyncio.to_thread(resend.Emails.send, tenant_params)
+        # logger.info(f"Confirmation email sent to tenant: {submission.tenant_email}")
         
         # Update status in database
         await db.renewal_submissions.update_one(
@@ -216,7 +217,7 @@ async def submit_renewal(submission: RenewalSubmission):
         return RenewalSubmissionResponse(
             id=submission_id,
             status="success",
-            message="Your renewal choice has been submitted successfully. Check your email for confirmation."
+            message="Your renewal choice has been submitted successfully. Our team will reach out to you shortly."
         )
         
     except Exception as e:
