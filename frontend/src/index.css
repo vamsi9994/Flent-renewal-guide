@@ -152,11 +152,11 @@ input:focus {
 
 .slider-marker {
     font-size: 12px;
-    color: #52525b;
+    color: #71717a;
     transition: color 0.2s ease;
 }
 
 .slider-marker.active {
-    color: #22c55e;
+    color: #16a34a;
     font-weight: 600;
 }
