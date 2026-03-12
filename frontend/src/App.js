@@ -193,30 +193,30 @@ function App() {
       <div className="content-wrapper">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20">
           {/* Flent Brand Logo */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-6">
             <a href="https://flent.in" target="_blank" rel="noopener noreferrer" className="inline-block">
-              <span className="text-2xl font-bold tracking-tight text-zinc-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+              <span className="text-4xl md:text-5xl font-bold tracking-tight text-zinc-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
                 flent
               </span>
             </a>
           </div>
 
           {/* Header */}
-          <div className="text-center mb-12 md:mb-16">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-4" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+          <div className="text-center mb-10 md:mb-12">
+            <h1 className="text-xl md:text-2xl font-semibold tracking-tight text-zinc-600 mb-3" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
               Renewal Guide
             </h1>
-            <p className="text-zinc-600 text-base md:text-lg max-w-2xl mx-auto mb-6">
-              Choose your lock-in period and see how much you can save on your renewal
+            <p className="text-zinc-500 text-sm md:text-base max-w-xl mx-auto mb-6">
+              Choose your lock-in period and see how much you can save
             </p>
             
             {/* Program Introduction */}
-            <div className="max-w-3xl mx-auto bg-white border border-zinc-200 rounded-2xl p-6 md:p-8 text-left shadow-sm">
-              <p className="text-zinc-700 text-base leading-relaxed mb-3">
+            <div className="max-w-2xl mx-auto bg-white border border-zinc-200 rounded-xl p-5 md:p-6 text-left shadow-sm">
+              <p className="text-zinc-600 text-sm leading-relaxed mb-2">
                 We've designed this program as a small thank you for choosing to stay with us longer. 
-                The longer you commit, the more you save — it's our way of rewarding your trust and making your stay even more rewarding.
+                The longer you commit, the more you save — it's our way of rewarding your trust.
               </p>
-              <p className="text-zinc-500 text-sm">
+              <p className="text-zinc-400 text-xs">
                 Simply pick a lock-in period that works for you, and watch the savings add up.
               </p>
             </div>
