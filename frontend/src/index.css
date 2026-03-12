@@ -154,10 +154,17 @@ input:focus {
 .slider-marker {
     font-size: 12px;
     color: #71717a;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.slider-marker:hover {
+    color: #16a34a;
 }
 
 .slider-marker.active {
     color: #16a34a;
     font-weight: 600;
+    background: rgba(22, 163, 74, 0.1);
 }
