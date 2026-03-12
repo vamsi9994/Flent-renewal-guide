@@ -227,13 +227,13 @@ function App() {
             
             {/* Left Panel - Control Panel */}
             <div className="lg:col-span-5">
-              <Card className="bg-white border-zinc-200 rounded-2xl overflow-hidden shadow-sm">
-                <CardContent className="p-6 md:p-8">
-                  <div className="flex items-center gap-3 mb-8">
-                    <div className="p-2 bg-zinc-100 rounded-lg">
-                      <Calculator className="w-5 h-5 text-zinc-600" />
+              <Card className="bg-white border-zinc-200 rounded-xl overflow-hidden shadow-sm">
+                <CardContent className="p-5 md:p-6">
+                  <div className="flex items-center gap-2 mb-6">
+                    <div className="p-1.5 bg-zinc-100 rounded-lg">
+                      <Calculator className="w-4 h-4 text-zinc-500" />
                     </div>
-                    <h2 className="text-xl font-semibold text-zinc-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+                    <h2 className="text-base font-semibold text-zinc-800" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
                       Your Details
                     </h2>
                   </div>
