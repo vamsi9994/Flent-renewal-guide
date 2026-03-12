@@ -357,7 +357,7 @@ function App() {
                   </div>
 
                   {/* New Monthly Rent */}
-                  <div className="bg-zinc-100 rounded-xl p-6 mb-6">
+                  <div className="bg-gradient-to-r from-zinc-100 to-zinc-50 rounded-xl p-6 mb-6 border border-zinc-200">
                     <div className="flex justify-between items-center">
                       <div>
                         <p className="text-zinc-500 text-sm uppercase tracking-wider mb-1">New Monthly Rent</p>
@@ -377,12 +377,14 @@ function App() {
                   </div>
 
                   {/* Total Savings - Hero Element */}
-                  <div className={`rounded-xl p-6 ${totalSavings > 0 ? 'bg-green-50 border border-green-200' : 'bg-zinc-100'}`}>
+                  <div className={`rounded-xl p-6 ${totalSavings > 0 ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-300' : 'bg-zinc-100'}`}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-3">
-                        <CheckCircle2 className={`w-6 h-6 ${totalSavings > 0 ? 'text-green-600' : 'text-zinc-400'}`} />
+                        <div className={`p-2 rounded-full ${totalSavings > 0 ? 'bg-green-500' : 'bg-zinc-300'}`}>
+                          <CheckCircle2 className={`w-5 h-5 ${totalSavings > 0 ? 'text-white' : 'text-zinc-500'}`} />
+                        </div>
                         <div>
-                          <p className={`text-sm uppercase tracking-wider mb-1 ${totalSavings > 0 ? 'text-green-700' : 'text-zinc-500'}`}>
+                          <p className={`text-sm uppercase tracking-wider mb-1 font-semibold ${totalSavings > 0 ? 'text-green-700' : 'text-zinc-500'}`}>
                             Total Savings (11 months)
                           </p>
                           <p className="text-zinc-500 text-xs">
