@@ -454,7 +454,7 @@ function App() {
                     </div>
 
                     {/* Summary before submit */}
-                    <div className="bg-zinc-100 rounded-xl p-4 mb-6">
+                    <div className="bg-gradient-to-r from-zinc-100 to-zinc-50 rounded-xl p-4 mb-6 border border-zinc-200">
                       <p className="text-zinc-500 text-xs uppercase tracking-wider mb-3">Your Selection Summary</p>
                       <div className="flex flex-wrap gap-4 text-sm">
                         <div>
@@ -466,9 +466,8 @@ function App() {
                           <span className="text-zinc-900 font-mono">{formatCurrency(newMonthlyRent)}</span>
                         </div>
                         {totalSavings > 0 && (
-                          <div>
-                            <span className="text-zinc-500">Savings: </span>
-                            <span className="text-green-600 font-mono">{formatCurrency(totalSavings)}</span>
+                          <div className="bg-green-100 px-3 py-1 rounded-full">
+                            <span className="text-green-700 font-semibold font-mono">{formatCurrency(totalSavings)} savings</span>
                           </div>
                         )}
                       </div>
