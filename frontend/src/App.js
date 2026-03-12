@@ -419,9 +419,9 @@ function App() {
           <div className="mt-10 max-w-2xl mx-auto">
             <Card className="bg-white border-zinc-200 rounded-xl overflow-hidden shadow-sm">
               <CardContent className="p-5 md:p-6">
-                <div className="flex items-center gap-2 mb-5">
-                  <div className="p-1.5 bg-green-500/10 rounded-lg">
-                    <Send className="w-4 h-4 text-green-600" />
+                  <div className="flex items-center gap-2 mb-5">
+                  <div className="p-1.5 rounded-lg" style={{ background: '#008E7515' }}>
+                    <Send className="w-4 h-4" style={{ color: '#008E75' }} />
                   </div>
                   <h2 className="text-base font-semibold text-zinc-800" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
                     Confirm Your Choice
