@@ -511,8 +511,8 @@ function App() {
                   </>
                 ) : (
                   <div className="text-center py-6">
-                    <div className="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <CheckCircle2 className="w-6 h-6 text-green-600" />
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: '#008E7515' }}>
+                      <CheckCircle2 className="w-6 h-6" style={{ color: '#008E75' }} />
                     </div>
                     <h3 className="text-lg font-semibold text-zinc-800 mb-2">Submission Successful!</h3>
                     <p className="text-zinc-500 text-sm max-w-md mx-auto">
