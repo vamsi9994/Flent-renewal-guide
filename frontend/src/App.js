@@ -315,9 +315,9 @@ function App() {
                   {/* Selected Plan Header */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-2">
-                      <div className={`p-1.5 rounded-lg ${currentOption.months > 0 ? 'bg-green-500/10' : 'bg-zinc-100'}`}>
+                      <div className={`p-1.5 rounded-lg`} style={{ background: currentOption.months > 0 ? '#008E7515' : '#f4f4f5' }}>
                         {currentOption.months > 0 ? (
-                          <Lock className="w-4 h-4 text-green-600" />
+                          <Lock className="w-4 h-4" style={{ color: '#008E75' }} />
                         ) : (
                           <Unlock className="w-4 h-4 text-zinc-500" />
                         )}
