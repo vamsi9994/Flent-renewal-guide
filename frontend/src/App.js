@@ -386,14 +386,14 @@ function App() {
                   </div>
 
                   {/* Total Savings - Hero Element */}
-                  <div className={`rounded-lg p-4 ${totalSavings > 0 ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-300' : 'bg-zinc-100'}`}>
+                  <div className={`rounded-lg p-4 ${totalSavings > 0 ? 'border-2' : 'bg-zinc-100'}`} style={totalSavings > 0 ? { background: '#008E7510', borderColor: '#008E75' } : {}}>
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <div className={`p-1.5 rounded-full ${totalSavings > 0 ? 'bg-green-500' : 'bg-zinc-300'}`}>
+                        <div className={`p-1.5 rounded-full`} style={{ background: totalSavings > 0 ? '#008E75' : '#d4d4d8' }}>
                           <CheckCircle2 className={`w-4 h-4 ${totalSavings > 0 ? 'text-white' : 'text-zinc-500'}`} />
                         </div>
                         <div>
-                          <p className={`text-xs uppercase tracking-wider font-semibold ${totalSavings > 0 ? 'text-green-700' : 'text-zinc-500'}`}>
+                          <p className={`text-xs uppercase tracking-wider font-semibold`} style={{ color: totalSavings > 0 ? '#008E75' : '#71717a' }}>
                             Total Savings (11 months)
                           </p>
                           <p className="text-zinc-400 text-xs">
@@ -404,7 +404,8 @@ function App() {
                       <div data-testid="total-savings-display">
                         <AnimatedNumber
                           value={totalSavings}
-                          className={`font-mono text-3xl md:text-4xl font-bold number-transition ${totalSavings > 0 ? 'text-green-600' : 'text-zinc-400'}`}
+                          className={`font-mono text-3xl md:text-4xl font-bold number-transition`}
+                          style={{ color: totalSavings > 0 ? '#008E75' : '#a1a1aa' }}
                         />
                       </div>
                     </div>
