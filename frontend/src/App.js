@@ -233,7 +233,7 @@ function App() {
                     <div className="p-2 bg-zinc-100 rounded-lg">
                       <Calculator className="w-5 h-5 text-zinc-600" />
                     </div>
-                    <h2 className="text-xl font-semibold text-zinc-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                    <h2 className="text-xl font-semibold text-zinc-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
                       Your Details
                     </h2>
                   </div>
