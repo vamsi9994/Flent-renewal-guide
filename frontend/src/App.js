@@ -342,23 +342,23 @@ function App() {
                   </div>
 
                   {/* Pricing Breakdown */}
-                  <div className="space-y-4 mb-8">
-                    <div className="flex justify-between items-center py-3 border-b border-zinc-200">
-                      <span className="text-zinc-600">Current Rent</span>
-                      <span className="font-mono text-zinc-900" data-testid="current-rent-display">
+                  <div className="space-y-3 mb-6">
+                    <div className="flex justify-between items-center py-2 border-b border-zinc-100">
+                      <span className="text-zinc-500 text-sm">Current Rent</span>
+                      <span className="font-mono text-zinc-800 text-sm" data-testid="current-rent-display">
                         {formatCurrency(currentRent)}
                       </span>
                     </div>
-                    <div className="flex justify-between items-center py-3 border-b border-zinc-200">
-                      <span className="text-zinc-600">Escalation ({escalation}%)</span>
-                      <span className="font-mono text-zinc-900">
+                    <div className="flex justify-between items-center py-2 border-b border-zinc-100">
+                      <span className="text-zinc-500 text-sm">Escalation ({escalation}%)</span>
+                      <span className="font-mono text-zinc-800 text-sm">
                         +{formatCurrency(escalationAmount)}
                       </span>
                     </div>
                     {currentOption.discount > 0 && (
-                      <div className="flex justify-between items-center py-3 px-4 -mx-4 bg-gradient-to-r from-yellow-50 to-amber-50 border-y border-yellow-200 rounded-lg">
-                        <span className="text-amber-700 font-medium">Discount on Escalation</span>
-                        <span className="font-mono text-green-600 font-semibold">
+                      <div className="flex justify-between items-center py-2 px-3 -mx-3 bg-gradient-to-r from-yellow-50 to-amber-50 border-y border-yellow-200 rounded-lg">
+                        <span className="text-amber-700 text-sm font-medium">Discount on Escalation</span>
+                        <span className="font-mono text-green-600 text-sm font-semibold">
                           -{formatCurrency(discountAmount)}
                         </span>
                       </div>
@@ -366,19 +366,19 @@ function App() {
                   </div>
 
                   {/* New Monthly Rent */}
-                  <div className="bg-gradient-to-r from-zinc-100 to-zinc-50 rounded-xl p-6 mb-6 border border-zinc-200">
+                  <div className="bg-gradient-to-r from-zinc-100 to-zinc-50 rounded-lg p-4 mb-4 border border-zinc-200">
                     <div className="flex justify-between items-center">
                       <div>
-                        <p className="text-zinc-500 text-sm uppercase tracking-wider mb-1">New Monthly Rent</p>
-                        <div className="flex items-center gap-2">
-                          <TrendingUp className="w-4 h-4 text-zinc-500" />
-                          <span className="text-zinc-500 text-sm">Starting next term</span>
+                        <p className="text-zinc-500 text-xs uppercase tracking-wider mb-0.5">New Monthly Rent</p>
+                        <div className="flex items-center gap-1">
+                          <TrendingUp className="w-3 h-3 text-zinc-400" />
+                          <span className="text-zinc-400 text-xs">Starting next term</span>
                         </div>
                       </div>
                       <div className="text-right">
                         <AnimatedNumber
                           value={newMonthlyRent}
-                          className="font-mono text-3xl md:text-4xl font-bold text-zinc-900 number-transition"
+                          className="font-mono text-2xl md:text-3xl font-bold text-zinc-900 number-transition"
                           data-testid="monthly-rent-display"
                         />
                       </div>
@@ -386,25 +386,25 @@ function App() {
                   </div>
 
                   {/* Total Savings - Hero Element */}
-                  <div className={`rounded-xl p-6 ${totalSavings > 0 ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-300' : 'bg-zinc-100'}`}>
+                  <div className={`rounded-lg p-4 ${totalSavings > 0 ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-300' : 'bg-zinc-100'}`}>
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className={`p-2 rounded-full ${totalSavings > 0 ? 'bg-green-500' : 'bg-zinc-300'}`}>
-                          <CheckCircle2 className={`w-5 h-5 ${totalSavings > 0 ? 'text-white' : 'text-zinc-500'}`} />
+                      <div className="flex items-center gap-2">
+                        <div className={`p-1.5 rounded-full ${totalSavings > 0 ? 'bg-green-500' : 'bg-zinc-300'}`}>
+                          <CheckCircle2 className={`w-4 h-4 ${totalSavings > 0 ? 'text-white' : 'text-zinc-500'}`} />
                         </div>
                         <div>
-                          <p className={`text-sm uppercase tracking-wider mb-1 font-semibold ${totalSavings > 0 ? 'text-green-700' : 'text-zinc-500'}`}>
+                          <p className={`text-xs uppercase tracking-wider font-semibold ${totalSavings > 0 ? 'text-green-700' : 'text-zinc-500'}`}>
                             Total Savings (11 months)
                           </p>
-                          <p className="text-zinc-500 text-xs">
-                            Compared to no lock-in option
+                          <p className="text-zinc-400 text-xs">
+                            Compared to no lock-in
                           </p>
                         </div>
                       </div>
                       <div data-testid="total-savings-display">
                         <AnimatedNumber
                           value={totalSavings}
-                          className={`font-mono text-4xl md:text-5xl font-bold number-transition ${totalSavings > 0 ? 'text-green-600' : 'text-zinc-400'}`}
+                          className={`font-mono text-3xl md:text-4xl font-bold number-transition ${totalSavings > 0 ? 'text-green-600' : 'text-zinc-400'}`}
                         />
                       </div>
                     </div>
