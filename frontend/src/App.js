@@ -323,7 +323,7 @@ function App() {
                         )}
                       </div>
                       <div>
-                        <h2 className="text-xl font-semibold text-zinc-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                        <h2 className="text-xl font-semibold text-zinc-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
                           {currentOption.label}
                         </h2>
                         <p className="text-zinc-500 text-sm">
