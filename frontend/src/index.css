@@ -160,11 +160,11 @@ input:focus {
 }
 
 .slider-marker:hover {
-    color: #16a34a;
+    color: #008E75;
 }
 
 .slider-marker.active {
-    color: #16a34a;
+    color: #008E75;
     font-weight: 600;
-    background: rgba(22, 163, 74, 0.1);
+    background: rgba(0, 142, 117, 0.1);
 }
