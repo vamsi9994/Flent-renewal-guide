@@ -415,25 +415,25 @@ function App() {
           </div>
 
           {/* Submit Section */}
-          <div className="mt-12 max-w-3xl mx-auto">
-            <Card className="bg-white border-zinc-200 rounded-2xl overflow-hidden shadow-sm">
-              <CardContent className="p-6 md:p-8">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="p-2 bg-green-500/10 rounded-lg">
-                    <Send className="w-5 h-5 text-green-600" />
+          <div className="mt-10 max-w-2xl mx-auto">
+            <Card className="bg-white border-zinc-200 rounded-xl overflow-hidden shadow-sm">
+              <CardContent className="p-5 md:p-6">
+                <div className="flex items-center gap-2 mb-5">
+                  <div className="p-1.5 bg-green-500/10 rounded-lg">
+                    <Send className="w-4 h-4 text-green-600" />
                   </div>
-                  <h2 className="text-xl font-semibold text-zinc-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+                  <h2 className="text-base font-semibold text-zinc-800" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
                     Confirm Your Choice
                   </h2>
                 </div>
 
                 {submitStatus !== 'success' ? (
                   <>
-                    <p className="text-zinc-600 text-sm mb-6">
-                      Ready to lock in your savings? Enter your email below and we'll send you a confirmation along with notifying our team.
+                    <p className="text-zinc-500 text-sm mb-5">
+                      Ready to lock in your savings? We'll notify our team of your choice.
                     </p>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
                       <div>
                         <label className="text-zinc-500 text-xs uppercase tracking-widest mb-2 block">
                           Your Email *
@@ -443,7 +443,7 @@ function App() {
                           type="email"
                           value={tenantEmail}
                           onChange={(e) => setTenantEmail(e.target.value)}
-                          className="bg-zinc-50 border-zinc-200 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-zinc-900 h-12"
+                          className="bg-zinc-50 border-zinc-200 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-zinc-900 h-11 text-sm"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -456,34 +456,34 @@ function App() {
                           type="text"
                           value={tenantName}
                           onChange={(e) => setTenantName(e.target.value)}
-                          className="bg-zinc-50 border-zinc-200 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-zinc-900 h-12"
+                          className="bg-zinc-50 border-zinc-200 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-zinc-900 h-11 text-sm"
                           placeholder="John Doe"
                         />
                       </div>
                     </div>
 
                     {/* Summary before submit */}
-                    <div className="bg-gradient-to-r from-zinc-100 to-zinc-50 rounded-xl p-4 mb-6 border border-zinc-200">
-                      <p className="text-zinc-500 text-xs uppercase tracking-wider mb-3">Your Selection Summary</p>
-                      <div className="flex flex-wrap gap-4 text-sm">
+                    <div className="bg-zinc-50 rounded-lg p-3 mb-5 border border-zinc-200">
+                      <p className="text-zinc-400 text-xs uppercase tracking-wider mb-2">Your Selection</p>
+                      <div className="flex flex-wrap gap-3 text-sm">
                         <div>
-                          <span className="text-zinc-500">Lock-in: </span>
-                          <span className="text-zinc-900 font-medium">{currentOption.label}</span>
+                          <span className="text-zinc-400">Lock-in: </span>
+                          <span className="text-zinc-700 font-medium">{currentOption.label}</span>
                         </div>
                         <div>
-                          <span className="text-zinc-500">New Rent: </span>
-                          <span className="text-zinc-900 font-mono">{formatCurrency(newMonthlyRent)}</span>
+                          <span className="text-zinc-400">New Rent: </span>
+                          <span className="text-zinc-700 font-mono">{formatCurrency(newMonthlyRent)}</span>
                         </div>
                         {totalSavings > 0 && (
-                          <div className="bg-green-100 px-3 py-1 rounded-full">
-                            <span className="text-green-700 font-semibold font-mono">{formatCurrency(totalSavings)} savings</span>
+                          <div className="bg-green-100 px-2 py-0.5 rounded-full">
+                            <span className="text-green-700 font-semibold font-mono text-xs">{formatCurrency(totalSavings)} savings</span>
                           </div>
                         )}
                       </div>
                     </div>
 
                     {submitStatus === 'error' && (
-                      <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
+                      <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-5">
                         <p className="text-red-600 text-sm">{submitMessage}</p>
                       </div>
                     )}
@@ -492,7 +492,7 @@ function App() {
                       data-testid="submit-btn"
                       onClick={handleSubmit}
                       disabled={isSubmitting || !tenantEmail}
-                      className="w-full h-14 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-semibold text-lg rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-500/25 hover:shadow-green-500/40"
+                      className="w-full h-12 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-semibold text-sm rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-500/25 hover:shadow-green-500/40"
                     >
                       {isSubmitting ? (
                         <>
