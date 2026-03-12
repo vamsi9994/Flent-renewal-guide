@@ -356,9 +356,9 @@ function App() {
                       </span>
                     </div>
                     {currentOption.discount > 0 && (
-                      <div className="flex justify-between items-center py-2 px-3 -mx-3 bg-gradient-to-r from-yellow-50 to-amber-50 border-y border-yellow-200 rounded-lg">
-                        <span className="text-amber-700 text-sm font-medium">Discount on Escalation</span>
-                        <span className="font-mono text-green-600 text-sm font-semibold">
+                      <div className="flex justify-between items-center py-2 px-3 -mx-3 border-y rounded-lg" style={{ background: '#FFE98820', borderColor: '#FFE988' }}>
+                        <span className="text-sm font-medium" style={{ color: '#a88c00' }}>Discount on Escalation</span>
+                        <span className="font-mono text-sm font-semibold" style={{ color: '#008E75' }}>
                           -{formatCurrency(discountAmount)}
                         </span>
                       </div>
