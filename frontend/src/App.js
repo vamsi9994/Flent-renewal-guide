@@ -493,7 +493,8 @@ function App() {
                       data-testid="submit-btn"
                       onClick={handleSubmit}
                       disabled={isSubmitting || !tenantEmail}
-                      className="w-full h-12 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-500 hover:to-emerald-500 text-white font-semibold text-sm rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-green-500/25 hover:shadow-green-500/40"
+                      className="w-full h-12 text-white font-semibold text-sm rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:opacity-90"
+                      style={{ background: '#008E75', boxShadow: '0 4px 12px rgba(0, 142, 117, 0.3)' }}
                     >
                       {isSubmitting ? (
                         <>
