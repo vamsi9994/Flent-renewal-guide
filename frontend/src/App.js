@@ -422,7 +422,7 @@ function App() {
                   <div className="p-2 bg-green-500/10 rounded-lg">
                     <Send className="w-5 h-5 text-green-600" />
                   </div>
-                  <h2 className="text-xl font-semibold text-zinc-900" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                  <h2 className="text-xl font-semibold text-zinc-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
                     Confirm Your Choice
                   </h2>
                 </div>
