@@ -192,9 +192,18 @@ function App() {
       {/* Content */}
       <div className="content-wrapper">
         <div className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20">
+          {/* Flent Brand Logo */}
+          <div className="text-center mb-8">
+            <a href="https://flent.in" target="_blank" rel="noopener noreferrer" className="inline-block">
+              <span className="text-2xl font-bold tracking-tight text-zinc-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+                flent
+              </span>
+            </a>
+          </div>
+
           {/* Header */}
           <div className="text-center mb-12 md:mb-16">
-            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-4" style={{ fontFamily: 'Manrope, sans-serif' }}>
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 mb-4" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
               Renewal Guide
             </h1>
             <p className="text-zinc-600 text-base md:text-lg max-w-2xl mx-auto mb-6">
