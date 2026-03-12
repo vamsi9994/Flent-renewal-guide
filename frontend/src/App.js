@@ -335,7 +335,7 @@ function App() {
                       </div>
                     </div>
                     {currentOption.discount > 0 && (
-                      <div className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg shadow-green-500/25">
+                      <div className="text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg" style={{ background: '#008E75', boxShadow: '0 4px 12px rgba(0, 142, 117, 0.3)' }}>
                         Save {currentOption.discount}%
                       </div>
                     )}
