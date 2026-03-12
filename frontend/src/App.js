@@ -279,7 +279,7 @@ function App() {
 
                   {/* Lock-in Slider */}
                   <div>
-                    <label className="text-zinc-500 text-xs uppercase tracking-widest mb-4 block">
+                    <label className="text-zinc-500 text-xs uppercase tracking-widest mb-3 block">
                       Choose Lock-in Period
                     </label>
                     <div className="custom-slider light-slider px-1" data-testid="lockin-slider">
@@ -292,7 +292,7 @@ function App() {
                       />
                     </div>
                     {/* Slider Markers */}
-                    <div className="slider-markers mt-4">
+                    <div className="slider-markers mt-3">
                       {LOCKIN_OPTIONS.map((option, index) => (
                         <span
                           key={option.months}
