@@ -476,8 +476,8 @@ function App() {
                           <span className="text-zinc-700 font-mono">{formatCurrency(newMonthlyRent)}</span>
                         </div>
                         {totalSavings > 0 && (
-                          <div className="bg-green-100 px-2 py-0.5 rounded-full">
-                            <span className="text-green-700 font-semibold font-mono text-xs">{formatCurrency(totalSavings)} savings</span>
+                          <div className="px-2 py-0.5 rounded-full" style={{ background: '#008E7520' }}>
+                            <span className="font-semibold font-mono text-xs" style={{ color: '#008E75' }}>{formatCurrency(totalSavings)} savings</span>
                           </div>
                         )}
                       </div>
