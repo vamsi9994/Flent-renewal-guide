@@ -239,7 +239,7 @@ function App() {
                   </div>
 
                   {/* Current Rent Input */}
-                  <div className="mb-6">
+                  <div className="mb-5">
                     <label className="text-zinc-500 text-xs uppercase tracking-widest mb-2 block">
                       Current Monthly Rent
                     </label>
@@ -250,14 +250,14 @@ function App() {
                         type="text"
                         value={currentRent.toLocaleString('en-IN')}
                         onChange={handleRentChange}
-                        className="bg-zinc-50 border-zinc-200 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-zinc-900 font-mono text-lg h-14 pl-10"
+                        className="bg-zinc-50 border-zinc-200 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-zinc-900 font-mono text-base h-12 pl-10"
                         placeholder="50,000"
                       />
                     </div>
                   </div>
 
                   {/* Standard Escalation Input */}
-                  <div className="mb-8">
+                  <div className="mb-6">
                     <label className="text-zinc-500 text-xs uppercase tracking-widest mb-2 block">
                       Standard Escalation
                     </label>
@@ -267,13 +267,13 @@ function App() {
                         type="text"
                         value={escalation}
                         onChange={handleEscalationChange}
-                        className="bg-zinc-50 border-zinc-200 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-zinc-900 font-mono text-lg h-14 pr-10"
+                        className="bg-zinc-50 border-zinc-200 focus:border-green-500/50 focus:ring-1 focus:ring-green-500/20 text-zinc-900 font-mono text-base h-12 pr-10"
                         placeholder="10"
                       />
                       <span className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-500 font-mono">%</span>
                     </div>
-                    <p className="text-zinc-500 text-sm mt-2">
-                      Monthly escalation: <span className="font-mono text-zinc-700">{formatCurrency(escalationAmount)}</span>
+                    <p className="text-zinc-400 text-xs mt-2">
+                      Monthly escalation: <span className="font-mono text-zinc-600">{formatCurrency(escalationAmount)}</span>
                     </p>
                   </div>
 
