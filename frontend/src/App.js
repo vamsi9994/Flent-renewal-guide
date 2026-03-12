@@ -185,7 +185,7 @@ function App() {
   };
 
   return (
-    <div className="App min-h-screen bg-zinc-100">
+    <div className="App min-h-screen bg-gradient-to-b from-zinc-50 to-zinc-100">
       {/* Background overlay */}
       <div className="bg-overlay" />
 
