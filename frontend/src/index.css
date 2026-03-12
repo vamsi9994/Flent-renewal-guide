@@ -87,7 +87,7 @@ body {
 
 /* Light theme slider */
 .light-slider [data-radix-slider-track] {
-    background: #52525b;
+    background: #27272a;
     height: 10px;
     border-radius: 9999px;
 }
