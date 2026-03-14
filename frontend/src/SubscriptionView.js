@@ -33,6 +33,13 @@ const FAQ_DATA = [
 // Plan options
 const PLANS = [
   { 
+    id: 'plan-0',
+    months: 0, 
+    discount: 0, 
+    label: "No Lock-in",
+    popular: false
+  },
+  { 
     id: 'plan-6',
     months: 6, 
     discount: 30, 
