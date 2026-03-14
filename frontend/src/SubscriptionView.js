@@ -236,7 +236,7 @@ function SubscriptionView() {
           <div className="bg-white border border-zinc-200 rounded-xl p-4 shadow-sm">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               <div>
-                <label className="text-zinc-500 text-xs uppercase tracking-widest mb-1.5 block">Your Email *</label>
+                <label className="text-zinc-500 text-xs uppercase tracking-widest mb-1.5 block">Email *</label>
                 <Input
                   data-testid="tenant-email-input"
                   type="email"
@@ -247,7 +247,7 @@ function SubscriptionView() {
                 />
               </div>
               <div>
-                <label className="text-zinc-500 text-xs uppercase tracking-widest mb-1.5 block">Your Name</label>
+                <label className="text-zinc-500 text-xs uppercase tracking-widest mb-1.5 block">Name</label>
                 <Input
                   data-testid="tenant-name-input"
                   type="text"
