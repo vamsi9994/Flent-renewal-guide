@@ -292,22 +292,22 @@ function SavingsView() {
                 <Sparkles className="w-4 h-4 text-white" />
                 <span className="text-white font-semibold text-sm">Your Deal for Next Term</span>
               </div>
-              <CardContent className="p-5">
+              <CardContent className="p-5 bg-white">
                 <div className="space-y-4">
                   {/* Monthly Escalated Base Rent */}
-                  <div className="flex justify-between items-center py-2 border-b border-zinc-100">
+                  <div className="flex justify-between items-center py-2 border-b border-zinc-200">
                     <div>
                       <p className="text-zinc-800 font-medium text-sm">Monthly Escalated Base Rent</p>
-                      <p className="text-zinc-400 text-xs">Current rent + {escalation}% escalation</p>
+                      <p className="text-zinc-500 text-xs">Current rent + {escalation}% escalation</p>
                     </div>
                     <p className="font-mono text-zinc-800 font-semibold">{formatCurrency(newBaseRent)}</p>
                   </div>
 
                   {/* Discount on Escalation */}
-                  <div className="flex justify-between items-center py-2 border-b border-zinc-100">
+                  <div className="flex justify-between items-center py-2 border-b border-zinc-200">
                     <div>
                       <p className="text-zinc-800 font-medium text-sm">Discount on Escalation</p>
-                      <p className="text-zinc-400 text-xs">{selectedOption.discount}% off on {formatCurrency(escalationAmount)}</p>
+                      <p className="text-zinc-500 text-xs">{selectedOption.discount}% off on {formatCurrency(escalationAmount)}</p>
                     </div>
                     <p className="font-mono font-semibold" style={{ color: selectedOption.discount > 0 ? '#008E75' : '#a1a1aa' }}>
                       {selectedOption.discount > 0 ? `-${formatCurrency(selectedCalc.discountAmount)}` : '₹0'}
@@ -315,10 +315,10 @@ function SavingsView() {
                   </div>
 
                   {/* Lock-in Contract Term */}
-                  <div className="flex justify-between items-center py-2 border-b border-zinc-100">
+                  <div className="flex justify-between items-center py-2 border-b border-zinc-200">
                     <div>
                       <p className="text-zinc-800 font-medium text-sm">Lock-in Contract Term</p>
-                      <p className="text-zinc-400 text-xs">Minimum commitment period</p>
+                      <p className="text-zinc-500 text-xs">Minimum commitment period</p>
                     </div>
                     <p className="font-semibold px-3 py-1 rounded-full text-sm" style={{ background: '#FFE988', color: '#7a6800' }}>
                       {selectedOption.lockIn > 0 ? `${selectedOption.lockIn} Months` : 'Flexible'}
@@ -326,7 +326,7 @@ function SavingsView() {
                   </div>
 
                   {/* New Monthly Rent */}
-                  <div className="flex justify-between items-center py-3 rounded-lg px-3" style={{ background: '#f4f4f5' }}>
+                  <div className="flex justify-between items-center py-3 rounded-lg px-3 bg-zinc-100">
                     <div>
                       <p className="text-zinc-800 font-semibold text-sm">Your New Monthly Rent</p>
                     </div>
@@ -334,7 +334,7 @@ function SavingsView() {
                   </div>
 
                   {/* Term Savings */}
-                  <div className="flex justify-between items-center py-3 rounded-lg px-3" style={{ background: '#008E7510' }}>
+                  <div className="flex justify-between items-center py-3 rounded-lg px-3" style={{ background: '#008E7515' }}>
                     <div>
                       <p className="font-semibold text-sm" style={{ color: '#008E75' }}>Total Term Savings (11 months)</p>
                     </div>
