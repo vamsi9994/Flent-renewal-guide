@@ -207,39 +207,39 @@ function SavingsView() {
   }
 
   return (
-    <div className="App min-h-screen bg-gradient-to-b from-zinc-50 to-zinc-100">
+    <div className="App min-h-screen" style={{ background: 'repeating-linear-gradient(135deg, #f4f4f5 0px, #f4f4f5 10px, #e8e8ea 10px, #e8e8ea 20px)' }}>
       <div className="max-w-4xl mx-auto px-4 py-12 md:py-16">
         {/* Header */}
         <div className="text-center mb-8">
           <a href="https://flent.in" target="_blank" rel="noopener noreferrer">
-            <span className="text-4xl md:text-5xl font-bold text-zinc-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>flent</span>
+            <img src="https://cdn.prod.website-files.com/6593ed11d5ad65d107dfe790/65c4c8c1ea891c18e87e8d60_Flent%20-%20Logo%20Black.svg" alt="Flent" className="h-10 mx-auto" />
           </a>
         </div>
 
-        {/* Congratulations */}
-        <div className="text-center mb-10">
+        {/* Congratulations - White container */}
+        <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-10 text-center">
           <h1 className="text-xl md:text-2xl font-semibold text-zinc-800 mb-3" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
             🎉 Congratulations on Completing Your First Term!
           </h1>
-          <p className="text-zinc-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-zinc-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-4">
             As a valued Flent resident, you've unlocked exclusive renewal savings. 
             Choose how much you'd like to save, and we'll show you the best deal for your next term.
           </p>
-        </div>
-
-        {/* Current Rent Info */}
-        <div className="flex justify-center gap-6 mb-10 text-sm">
-          <div className="text-center">
-            <p className="text-zinc-400 text-xs uppercase tracking-wider mb-1">Current Rent</p>
-            <p className="font-mono font-semibold text-zinc-800">{formatCurrency(currentRent)}</p>
-          </div>
-          <div className="text-center">
-            <p className="text-zinc-400 text-xs uppercase tracking-wider mb-1">Escalation</p>
-            <p className="font-mono font-semibold text-zinc-800">{escalation}%</p>
-          </div>
-          <div className="text-center">
-            <p className="text-zinc-400 text-xs uppercase tracking-wider mb-1">New Base Rent</p>
-            <p className="font-mono font-semibold text-zinc-800">{formatCurrency(newBaseRent)}</p>
+          
+          {/* Current Rent Info */}
+          <div className="flex justify-center gap-6 text-sm pt-4 border-t border-zinc-100">
+            <div className="text-center">
+              <p className="text-zinc-400 text-xs uppercase tracking-wider mb-1">Current Rent</p>
+              <p className="font-mono font-semibold text-zinc-800">{formatCurrency(currentRent)}</p>
+            </div>
+            <div className="text-center">
+              <p className="text-zinc-400 text-xs uppercase tracking-wider mb-1">Escalation</p>
+              <p className="font-mono font-semibold text-zinc-800">{escalation}%</p>
+            </div>
+            <div className="text-center">
+              <p className="text-zinc-400 text-xs uppercase tracking-wider mb-1">New Base Rent</p>
+              <p className="font-mono font-semibold text-zinc-800">{formatCurrency(newBaseRent)}</p>
+            </div>
           </div>
         </div>
 
