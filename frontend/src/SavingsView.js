@@ -432,9 +432,10 @@ function SavingsView() {
             href="https://calendar.app.google/DumGhTWdbLPNUzRf7" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-zinc-300 bg-white hover:bg-zinc-50 transition-all text-sm font-medium text-zinc-700 hover:border-zinc-400"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full transition-all text-sm font-semibold hover:opacity-90"
+            style={{ background: '#FFE988', color: '#7a6800' }}
           >
-            <Calendar className="w-4 h-4" style={{ color: '#008E75' }} />
+            <Calendar className="w-4 h-4" />
             Need help deciding? Block some time
           </a>
         </div>
