@@ -167,12 +167,14 @@ function SavingsView() {
   // Success state
   if (submitStatus === 'success') {
     return (
-      <div className="App min-h-screen" style={{ background: 'repeating-linear-gradient(135deg, #f4f4f5 0px, #f4f4f5 10px, #e8e8ea 10px, #e8e8ea 20px)' }}>
+      <div className="App min-h-screen" style={{ background: 'repeating-linear-gradient(135deg, #fafafa 0px, #fafafa 10px, #f5f5f5 10px, #f5f5f5 20px)' }}>
         <div className="max-w-lg mx-auto px-4 py-16">
           <div className="text-center mb-8">
             <a href="https://flent.in" target="_blank" rel="noopener noreferrer">
-              <svg className="h-8 mx-auto" viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="20" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="24" fontWeight="700" fill="#18181b">flent</text>
+              <svg className="h-10 mx-auto" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 40V18C8 8 14 2 24 2C28 2 31 3 33 4L31 12C29.5 11 27.5 10.5 25.5 10.5C21 10.5 18 13.5 18 18.5V40H8Z" fill="#18181b"/>
+                <rect x="5" y="22" width="20" height="8" fill="#18181b"/>
+                <text x="30" y="36" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="32" fontWeight="700" fill="#18181b">lent</text>
               </svg>
             </a>
           </div>
