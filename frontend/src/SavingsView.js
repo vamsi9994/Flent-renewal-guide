@@ -311,8 +311,11 @@ function SavingsView() {
                 }}>
                   {formatCurrency(totalSavings)}
                 </p>
-                <p className="text-xs text-zinc-500">
+                <p className="text-xs text-zinc-500 mb-1">
                   {option.discount > 0 ? `${option.discount}% off` : 'No discount'}
+                </p>
+                <p className="text-xs font-medium" style={{ color: '#008E75' }}>
+                  {option.lockInLabel}
                 </p>
               </button>
             );
