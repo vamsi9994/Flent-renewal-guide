@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "@/App.css";
-import { CheckCircle2, HelpCircle, Loader2, ChevronRight, Sparkles } from "lucide-react";
+import { CheckCircle2, HelpCircle, Loader2, ChevronRight, Sparkles, Calendar } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
