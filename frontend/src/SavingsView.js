@@ -311,16 +311,19 @@ function SavingsView() {
                   </div>
                 )}
                 
-                <p className="text-2xl md:text-3xl font-bold mb-1" style={{ 
+                <p className="text-2xl md:text-3xl font-bold mb-2" style={{ 
                   color: isSelected ? '#008E75' : '#18181b',
                   fontFamily: 'Plus Jakarta Sans, sans-serif'
                 }}>
                   {formatCurrency(totalSavings)}
                 </p>
-                <p className="text-xs text-zinc-500 mb-1">
+                <p className="text-xs text-zinc-500 mb-2">
                   {option.discount > 0 ? `${option.discount}% off` : 'No discount'}
                 </p>
-                <p className="text-xs font-medium" style={{ color: '#008E75' }}>
+                <p className="text-sm font-semibold px-2 py-1 rounded-full inline-block" style={{ 
+                  background: isSelected ? '#008E75' : '#FFE988', 
+                  color: isSelected ? 'white' : '#7a6800' 
+                }}>
                   {option.lockInLabel}
                 </p>
               </button>
