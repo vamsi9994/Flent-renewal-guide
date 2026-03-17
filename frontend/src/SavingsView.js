@@ -319,18 +319,28 @@ function SavingsView() {
                   </div>
                 )}
                 
+                {/* Discount Badge */}
+                <div className="mb-2">
+                  <span 
+                    className="inline-block px-2 py-0.5 rounded text-xs font-bold"
+                    style={{ 
+                      background: option.discount > 0 ? '#008E75' : '#e4e4e7', 
+                      color: option.discount > 0 ? 'white' : '#71717a' 
+                    }}
+                  >
+                    {option.discount > 0 ? `${option.discount}% OFF` : 'NO DISCOUNT'}
+                  </span>
+                </div>
+                
                 <p className="text-2xl md:text-3xl font-bold mb-2" style={{ 
                   color: isSelected ? '#008E75' : '#18181b',
                   fontFamily: 'Plus Jakarta Sans, sans-serif'
                 }}>
                   {formatCurrency(totalSavings)}
                 </p>
-                <p className="text-xs text-zinc-500 mb-2">
-                  {option.discount > 0 ? `${option.discount}% off` : 'No discount'}
-                </p>
                 <p className="text-sm font-semibold px-2 py-1 rounded-full inline-block" style={{ 
-                  background: isSelected ? '#008E75' : '#FFE988', 
-                  color: isSelected ? 'white' : '#7a6800' 
+                  background: '#FFE988', 
+                  color: '#7a6800' 
                 }}>
                   {option.lockInLabel}
                 </p>
