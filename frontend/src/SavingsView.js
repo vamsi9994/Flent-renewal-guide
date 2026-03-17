@@ -436,28 +436,40 @@ function SavingsView() {
           </a>
         </div>
 
-        {/* FAQ Section - Compact */}
+        {/* FAQ Section - Categorized & Compact */}
         <div className="max-w-2xl mx-auto mb-8">
-          <Accordion type="single" collapsible className="border border-zinc-200 rounded-xl bg-white shadow-sm overflow-hidden">
+          <div className="border border-zinc-200 rounded-xl bg-white shadow-sm overflow-hidden">
             <div className="px-4 py-3 border-b border-zinc-100 flex items-center gap-2 bg-zinc-50">
               <HelpCircle className="w-4 h-4 text-zinc-500" />
               <span className="text-sm font-medium text-zinc-700">Frequently Asked Questions</span>
             </div>
-            {FAQ_DATA.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="border-b border-zinc-100 last:border-b-0"
-              >
-                <AccordionTrigger className="text-left text-zinc-700 hover:no-underline px-4 py-3 text-sm font-medium hover:bg-zinc-50">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-zinc-500 px-4 pb-3 text-sm leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+            
+            <Accordion type="multiple" className="divide-y divide-zinc-100">
+              {FAQ_CATEGORIES.map((category, catIndex) => (
+                <AccordionItem key={catIndex} value={`cat-${catIndex}`} className="border-0">
+                  <AccordionTrigger className="px-4 py-3 text-sm font-semibold hover:no-underline hover:bg-zinc-50" style={{ color: '#008E75' }}>
+                    {category.category}
+                  </AccordionTrigger>
+                  <AccordionContent className="px-4 pb-3">
+                    <div className="space-y-2">
+                      {category.faqs.map((faq, faqIndex) => (
+                        <Accordion key={faqIndex} type="single" collapsible>
+                          <AccordionItem value={`faq-${catIndex}-${faqIndex}`} className="border border-zinc-100 rounded-lg">
+                            <AccordionTrigger className="px-3 py-2 text-left text-zinc-700 hover:no-underline text-sm hover:bg-zinc-50 rounded-lg">
+                              {faq.question}
+                            </AccordionTrigger>
+                            <AccordionContent className="px-3 pb-3 text-zinc-500 text-sm leading-relaxed">
+                              {faq.answer}
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Accordion>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
 
         <div className="h-8"></div>
