@@ -212,7 +212,9 @@ function SavingsView() {
         {/* Header */}
         <div className="text-center mb-8">
           <a href="https://flent.in" target="_blank" rel="noopener noreferrer">
-            <img src="https://cdn.prod.website-files.com/6593ed11d5ad65d107dfe790/65c4c8c1ea891c18e87e8d60_Flent%20-%20Logo%20Black.svg" alt="Flent" className="h-10 mx-auto" />
+            <svg className="h-8 mx-auto" viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="20" fontFamily="Plus Jakarta Sans, sans-serif" fontSize="24" fontWeight="700" fill="#18181b">flent</text>
+            </svg>
           </a>
         </div>
 
