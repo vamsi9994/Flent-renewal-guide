@@ -167,7 +167,7 @@ function SavingsView() {
   // Success state
   if (submitStatus === 'success') {
     return (
-      <div className="App min-h-screen" style={{ background: 'repeating-linear-gradient(135deg, #fafafa 0px, #fafafa 10px, #f5f5f5 10px, #f5f5f5 20px)' }}>
+      <div className="App min-h-screen" style={{ background: 'repeating-linear-gradient(135deg, #fcfcfc 0px, #fcfcfc 10px, #f9f9f9 10px, #f9f9f9 20px)' }}>
         <div className="max-w-lg mx-auto px-4 py-16">
           <div className="text-center mb-8">
             <a href="https://flent.in" target="_blank" rel="noopener noreferrer">
