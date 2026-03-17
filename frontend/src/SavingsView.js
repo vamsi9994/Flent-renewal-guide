@@ -67,10 +67,10 @@ const FAQ_CATEGORIES = [
 
 // Savings options configuration
 const SAVINGS_OPTIONS = [
-  { id: 'save-0', discount: 0, lockIn: 0, label: "No Lock-in" },
-  { id: 'save-30', discount: 30, lockIn: 6, label: "6 Months" },
-  { id: 'save-40', discount: 40, lockIn: 9, label: "9 Months" },
-  { id: 'save-50', discount: 50, lockIn: 11, label: "11 Months" },
+  { id: 'save-0', discount: 0, lockIn: 0, label: "No Lock-in", lockInLabel: "Flexible" },
+  { id: 'save-30', discount: 30, lockIn: 6, label: "6 Months", lockInLabel: "6 months lock-in" },
+  { id: 'save-40', discount: 40, lockIn: 9, label: "9 Months", lockInLabel: "9 months lock-in" },
+  { id: 'save-50', discount: 50, lockIn: 11, label: "11 Months", lockInLabel: "11 months lock-in" },
 ];
 
 // Helper to format currency
