@@ -212,7 +212,7 @@ function SavingsView() {
   }
 
   return (
-    <div className="App min-h-screen" style={{ background: 'repeating-linear-gradient(135deg, #fafafa 0px, #fafafa 10px, #f5f5f5 10px, #f5f5f5 20px)' }}>
+    <div className="App min-h-screen" style={{ background: 'repeating-linear-gradient(135deg, #fcfcfc 0px, #fcfcfc 10px, #f9f9f9 10px, #f9f9f9 20px)' }}>
       <div className="max-w-4xl mx-auto px-4 py-12 md:py-16">
         {/* Header - Flent Logo */}
         <div className="text-center mb-8">
@@ -228,12 +228,16 @@ function SavingsView() {
 
         {/* Congratulations - White container */}
         <div className="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-10 text-center">
-          <h1 className="text-xl md:text-2xl font-semibold text-zinc-800 mb-3" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
+          <h1 className="text-xl md:text-2xl font-semibold text-zinc-800 mb-4" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
             🎉 Congratulations on Completing Your First Term!
           </h1>
+          <p className="text-zinc-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-3">
+            Your journey with Flent has been amazing, and we want to make your next chapter even better. 
+            As a thank you for choosing to call Flent home, we've crafted an exclusive <strong>Savings Program</strong> just for you.
+          </p>
           <p className="text-zinc-600 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-4">
-            As a valued Flent resident, you've unlocked exclusive renewal savings. 
-            Choose how much you'd like to save, and we'll show you the best deal for your next term.
+            The longer you stay, the more you save — it's our way of rewarding your trust and long-term association. 
+            Choose your savings below and lock in the best deal for your next term. <span style={{ color: '#008E75', fontWeight: '600' }}>Up to 50% off on escalation awaits!</span>
           </p>
           
           {/* Current Rent Info */}
