@@ -167,11 +167,11 @@ function SavingsView() {
   // Success state
   if (submitStatus === 'success') {
     return (
-      <div className="App min-h-screen bg-gradient-to-b from-zinc-50 to-zinc-100">
+      <div className="App min-h-screen" style={{ background: 'repeating-linear-gradient(135deg, #f4f4f5 0px, #f4f4f5 10px, #e8e8ea 10px, #e8e8ea 20px)' }}>
         <div className="max-w-lg mx-auto px-4 py-16">
           <div className="text-center mb-8">
             <a href="https://flent.in" target="_blank" rel="noopener noreferrer">
-              <span className="text-4xl font-bold text-zinc-900" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>flent</span>
+              <img src="https://cdn.prod.website-files.com/6593ed11d5ad65d107dfe790/65c4c8c1ea891c18e87e8d60_Flent%20-%20Logo%20Black.svg" alt="Flent" className="h-10 mx-auto" />
             </a>
           </div>
           <Card className="bg-white border-zinc-200 rounded-xl shadow-sm">
