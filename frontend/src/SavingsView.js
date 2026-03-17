@@ -396,28 +396,36 @@ function SavingsView() {
           </p>
         </div>
 
-        {/* FAQ Section */}
-        <div className="max-w-2xl mx-auto">
-          <div className="flex items-center gap-2 mb-6">
-            <div className="p-1.5 bg-zinc-200 rounded-lg">
+        {/* Help Button */}
+        <div className="max-w-md mx-auto text-center mb-8">
+          <a 
+            href="https://calendar.app.google/DumGhTWdbLPNUzRf7" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-zinc-300 bg-white hover:bg-zinc-50 transition-all text-sm font-medium text-zinc-700 hover:border-zinc-400"
+          >
+            <Calendar className="w-4 h-4" style={{ color: '#008E75' }} />
+            Need help deciding? Block some time
+          </a>
+        </div>
+
+        {/* FAQ Section - Compact */}
+        <div className="max-w-2xl mx-auto mb-8">
+          <Accordion type="single" collapsible className="border border-zinc-200 rounded-xl bg-white shadow-sm overflow-hidden">
+            <div className="px-4 py-3 border-b border-zinc-100 flex items-center gap-2 bg-zinc-50">
               <HelpCircle className="w-4 h-4 text-zinc-500" />
+              <span className="text-sm font-medium text-zinc-700">Frequently Asked Questions</span>
             </div>
-            <h2 className="text-base font-semibold text-zinc-800" style={{ fontFamily: 'Plus Jakarta Sans, sans-serif' }}>
-              Frequently Asked Questions
-            </h2>
-          </div>
-          
-          <Accordion type="single" collapsible className="space-y-2">
             {FAQ_DATA.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-white border border-zinc-200 rounded-lg px-4 data-[state=open]:border-zinc-300 shadow-sm"
+                className="border-b border-zinc-100 last:border-b-0"
               >
-                <AccordionTrigger className="text-left text-zinc-700 hover:no-underline py-4 text-sm font-medium">
+                <AccordionTrigger className="text-left text-zinc-700 hover:no-underline px-4 py-3 text-sm font-medium hover:bg-zinc-50">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-zinc-500 pb-4 text-sm leading-relaxed">
+                <AccordionContent className="text-zinc-500 px-4 pb-3 text-sm leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
